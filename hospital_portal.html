@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Hospital Admin Portal</title>
+    <link rel="stylesheet" href="hospital_style.css">
+</head>
+<body>
+    <header>
+        <h1>Hospital Administration</h1>
+        <a href="index.html" class="back-link">&larr; Back to Home</a>
+    </header>
+
+    <main class="container">
+        <!-- The Login Form Section -->
+        <div id="login-section">
+            <div class="login-card">
+                <h2>Staff Login</h2>
+                <p>Please enter your credentials to update hospital status.</p>
+                <form id="login-form">
+                    <div class="input-group">
+                        <label for="username">Username</label>
+                        <input type="text" id="username" name="username" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="password">Password</label>
+                        <input type="password" id="password" name="password" required>
+                    </div>
+                    <button type="submit" class="login-button">Login</button>
+                </form>
+            </div>
+        </div>
+
+        <!-- The Dashboard Section (Initially Hidden) -->
+        <div id="dashboard-section" class="hidden">
+            <h2>CMC Hospital, Vellore - Status Dashboard</h2>
+            <p>Last updated: September 27, 2025, 10:15 PM</p>
+
+            <div class="dashboard-cards">
+                <!-- Card for ER and ICU Beds -->
+                <div class="update-card">
+                    <h3>Bed Availability</h3>
+                    <div class="input-group">
+                        <label for="er-beds">Emergency Ward (ER) Beds Available</label>
+                        <input type="number" id="er-beds" value="2" min="0">
+                    </div>
+                    <div class="input-group">
+                        <label for="icu-beds">ICU Beds Available</label>
+                        <input type="number" id="icu-beds" value="1" min="0">
+                    </div>
+                </div>
+
+                <!-- Card for Ambulance Status -->
+                <div class="update-card">
+                    <h3>Ambulance Status</h3>
+                    <div class="input-group">
+                        <label for="ambulances">Ambulances Available</label>
+                        <input type="number" id="ambulances" value="3" min="0">
+                    </div>
+                </div>
+                
+                <!-- Card for Overall Status -->
+                <div class="update-card">
+                    <h3>Overall ER Status</h3>
+                    <div class="input-group">
+                         <label for="overall-status">Set Emergency Ward Status</label>
+                         <select id="overall-status">
+                             <option value="Available">Available</option>
+                             <option value="Limited" selected>Limited Capacity</option>
+                             <option value="At Capacity">At Capacity</option>
+                         </select>
+                    </div>
+                </div>
+            </div>
+            
+            <button id="update-status-btn" class="update-button">Update Live Status</button>
+            <p id="success-message" class="hidden">Status updated successfully!</p>
+        </div>
+    </main>
+
+    <script>
+        // Simple JavaScript to simulate login and show dashboard
+        document.getElementById('login-form').addEventListener('submit', function(event) {
+            event.preventDefault(); // Prevent form from actually submitting
+            
+            document.getElementById('login-section').classList.add('hidden');
+            document.getElementById('dashboard-section').classList.remove('hidden');
+        });
+
+        // Show a confirmation message on update
+        document.getElementById('update-status-btn').addEventListener('click', function() {
+            const successMsg = document.getElementById('success-message');
+            successMsg.classList.remove('hidden');
+            // Hide the message after a few seconds
+            setTimeout(() => {
+                successMsg.classList.add('hidden');
+            }, 3000);
+        });
+    </script>
+</body>
+</html>

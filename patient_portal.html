@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Portal - Hospital List</title>
+    <link rel="stylesheet" href="portal_style.css"> 
+</head>
+<body>
+    <header>
+        <h1>Emergency Response Portal</h1>
+        <a href="index.html" class="back-link">&larr; Back to Home</a> 
+    </header>
+    <main class="container">
+        <section class="filters">
+            <div class="filter-group">
+                <label for="sort-by">Sort By:</label>
+                <select id="sort-by" name="sort-by"><option value="distance">Distance</option><option value="wait-time">Wait Time</option></select>
+            </div>
+            <div class="filter-group">
+                <label for="specialization">Specialization:</label>
+                <select id="specialization" name="specialization"><option value="all">All</option><option value="cardiology">Cardiology</option><option value="neurology">Neurology</option><option value="trauma">Trauma Center</option></select>
+            </div>
+        </section>
+        <section id="hospital-list">
+            <div class="hospital-card">
+                <div class="hospital-info"><h2>North Vellore General Hospital</h2><p class="details"><strong>Distance:</strong> 3.5 km | <strong>Wait Time:</strong> Approx. 15 min</p><p class="specialties">Specialties: Cardiology, General Surgery</p></div>
+                <div class="hospital-status"><span class="status-indicator available">Available</span><p>ER Beds: 12 | ICU Beds: 4</p></div>
+            </div>
+            <div class="hospital-card">
+                <div class="hospital-info"><h2>CMC Hospital</h2><p class="details"><strong>Distance:</strong> 5.2 km | <strong>Wait Time:</strong> Approx. 45 min</p><p class="specialties">Specialties: Trauma Center, Neurology</p></div>
+                <div class="hospital-status"><span class="status-indicator limited">Limited Capacity</span><p>ER Beds: 2 | ICU Beds: 1</p></div>
+            </div>
+            <div class="hospital-card">
+                <div class="hospital-info"><h2>Apollo KH Hospital</h2><p class="details"><strong>Distance:</strong> 8.1 km | <strong>Wait Time:</strong> High</p><p class="specialties">Specialties: Pediatrics, Oncology</p></div>
+                <div class="hospital-status"><span class="status-indicator full">At Capacity</span><p>ER Beds: 0 | ICU Beds: 0</p></div>
+            </div>
+        </section>
+    </main>
+</body>
+</html>

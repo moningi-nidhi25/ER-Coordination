@@ -1,0 +1,23 @@
+body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; background-color: #f4f7f6; color: #333; }
+.container { max-width: 900px; margin: 20px auto; padding: 0 20px; }
+header { background-color: #0056b3; color: white; padding: 20px; text-align: center; position: relative; }
+header h1 { margin: 0; font-size: 2em; }
+.back-link { position: absolute; top: 50%; left: 20px; transform: translateY(-50%); color: white; text-decoration: none; font-weight: bold; }
+.filters { display: flex; gap: 20px; margin-bottom: 20px; background-color: white; padding: 15px; border-radius: 8px; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+.filter-group label { font-weight: bold; margin-bottom: 5px; font-size: 0.9em; }
+.filter-group select { padding: 8px; border: 1px solid #ccc; border-radius: 4px; }
+#hospital-list { display: flex; flex-direction: column; gap: 15px; }
+.hospital-card {
+    background-color: #ffffff; border-radius: 8px; box-shadow: 0 4px 8px rgba(0,0,0,0.1); padding: 20px;
+    display: flex; justify-content: space-between; align-items: center; border-left: 5px solid #ccc;
+}
+.hospital-info h2 { margin: 0 0 5px 0; font-size: 1.4em; color: #0056b3; }
+.hospital-info .details, .hospital-info .specialties { margin: 5px 0; color: #555; font-size: 0.95em; }
+.hospital-status { text-align: right; flex-shrink: 0; padding-left: 20px; }
+.status-indicator { display: inline-block; padding: 8px 15px; border-radius: 20px; font-weight: bold; color: white; font-size: 0.9em; text-transform: uppercase; }
+.status-indicator.available { background-color: #28a745; }
+.hospital-card:has(.status-indicator.available) { border-left-color: #28a745; }
+.status-indicator.limited { background-color: #ffc107; color: #333; }
+.hospital-card:has(.status-indicator.limited) { border-left-color: #ffc107; }
+.status-indicator.full { background-color: #dc3545; }
+.hospital-card:has(.status-indicator.full) { border-left-color: #dc3545; }
